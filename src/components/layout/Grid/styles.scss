@@ -1,0 +1,36 @@
+@import '~styles/config';
+
+
+.Grid {
+  @include media('≥tablet') {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+  }
+}
+
+.Grid > * {
+  @include media('<tablet') {
+    display: block;
+
+    &:nth-child(n+2) {
+      margin-top: 30px;
+    }
+  }
+
+  @include media('≥tablet','<desktop') {
+    width: 47.5%;
+
+    &:nth-child(n+3){
+      margin-top: 30px;
+    }
+  }
+
+  @include media('≥desktop') {
+    width:30%;
+
+    &:nth-child(n+4){
+      margin-top: 30px;
+    }
+  }
+}
